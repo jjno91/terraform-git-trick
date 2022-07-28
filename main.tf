@@ -1,8 +1,9 @@
 locals {
-  git_log    = chomp(file("${path.module}/.git/logs/HEAD"))
-  last_line  = regex(".*\\z", local.git_log)
-  last_split = split(" ", local.last_line)
-  git_hash   = local.last_split[1]
+  git_log_path     = "${path.module}/.git/logs/HEAD"
+  git_log_contents = fileexists(local.git_log_path) ? chomp(file(local.git_log_path)) : ""
+  last_line        = fileexists(local.git_log_path) ? regex(".*\\z", local.git_log_contents) : ""
+  last_split       = fileexists(local.git_log_path) ? split(" ", local.last_line) : []
+  git_hash         = fileexists(local.git_log_path) ? local.last_split[1] : "latest"
 }
 
 output "this" {
