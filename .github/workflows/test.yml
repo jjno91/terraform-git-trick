@@ -9,4 +9,5 @@ env:
 jobs:
   test:
     steps:
-      run: terraform init
+      - name: init
+        run: terraform init
