@@ -8,11 +8,11 @@ locals {
 output "this" {
   value = local.git_hash
 }
-/*
+
 output "module" {
   value = module.this.this
 }
 
 module "this" {
-  source = "github.com/jjno91/terraform-git-trick.git?ref=96f4045b41f4e97cf1ede0c90c4bc70b7cb311a2"
-}*/
+  source = "github.com/jjno91/terraform-git-trick.git?ref=0d4519165159221599c0f885a232b1bd23a95d41"
+}
