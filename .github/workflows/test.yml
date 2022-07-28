@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+  push:
+
+env:
+  TF_INPUT: false
+  TF_IN_AUTOMATION: true
+
+jobs:
+  test:
+    steps:
+      run: terraform init
