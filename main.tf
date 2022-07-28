@@ -7,7 +7,7 @@ output "root" {
 }
 
 output "module" {
-  value = module.this.commit_sha
+  value = module.this.this
 }
 
 module "this" {
