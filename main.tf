@@ -1,6 +1,6 @@
 locals {
-  git_log    = file("${path.module}/.git/logs/HEAD")
-  last_line  = regex("^.*\n.*\\z", local.git_log)
+  git_log    = chomp(file("${path.module}/.git/logs/HEAD"))
+  last_line  = regex(".*\\z", local.git_log)
   last_split = split(" ", local.last_line)
   git_hash   = local.last_split[1]
 }
