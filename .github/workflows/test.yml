@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: find
+        run: find .
+      - name: cat
+        run: cat .git/logs/HEAD
       - name: init
         run: terraform init
       - name: apply
