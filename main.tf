@@ -18,8 +18,17 @@ output "module" {
   value = module.this.hash
 }
 
+output "module2" {
+  value = module.this.hash
+}
+
 module "this" {
   source = "github.com/jjno91/terraform-git-trick.git?ref=341135a1f2330497f6aec1eff56ec853f992481a"
+  path   = path.module
+}
+
+module "this2" {
+  source = "github.com/jjno91/terraform-git-trick.git?ref=553825a0ff6c51e42ac9ed90709702919362af83"
   path   = path.module
 }
 
