@@ -1,9 +1,7 @@
 module "this" {
-  source = "github.com/champ-oss/terraform-git-hash.git?ref=v1.0.1-552fc19"
-  path   = path.module
+  source = "github.com/jjno91/terraform-git-trick.git?ref=c3fa539e4d862732ee0401299ce5d3b6c972d2eb"
 }
 
 output "this" {
-  value = module.this.hash
+  value = module.this.this
 }
-//comment
