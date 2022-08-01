@@ -19,7 +19,7 @@ output "module" {
 }
 
 output "module2" {
-  value = module.this.hash
+  value = module.this2.hash
 }
 
 module "this" {
